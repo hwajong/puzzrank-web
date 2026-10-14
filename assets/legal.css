@@ -1,0 +1,78 @@
+/* 이용약관·개인정보처리방침 공통. 색은 첫 페이지(index.html)와 같다. */
+:root {
+  --bg: #140c34;
+  --surface: #211651;
+  --line: #46379a;
+  --ink: #f5f1ff;
+  --ink-muted: #bfb4ee;
+  --ink-faint: #9184cc;
+  --sky: #3dd6ff;
+  --title: "Jua", "Baloo 2", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+}
+header img { display: block; width: 150px; height: auto; }
+
+.lang {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+main { max-width: 760px; margin: 0 auto; padding: 8px 16px 56px; }
+
+/* 언어별 본문: 지금 언어가 아닌 쪽은 숨긴다 (legal.js) */
+article[lang]:not(.active) { display: none; }
+
+h1 { margin: 16px 0 4px; font-family: var(--title); font-weight: 400; font-size: clamp(28px, 6vw, 38px); line-height: 1.25; }
+h2 { margin: 36px 0 8px; font-size: 19px; }
+h3 { margin: 20px 0 4px; font-size: 16px; }
+p, li { color: var(--ink-muted); }
+strong { color: var(--ink); }
+a { color: var(--sky); }
+.meta { margin: 0 0 24px; color: var(--ink-faint); font-size: 14px; }
+.box { margin: 16px 0; padding: 14px 16px; border-radius: 14px; background: var(--surface); }
+.box p { margin: 0; }
+
+/* 표는 좁은 화면에서 표 안에서만 가로로 밀린다 */
+.table { overflow-x: auto; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; }
+table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14px; }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; color: var(--ink-muted); }
+th { background: var(--surface); color: var(--ink); font-weight: 700; }
+tr:last-child td { border-bottom: 0; }
+
+footer {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-faint);
+  font-size: 14px;
+}
+footer a { color: var(--ink-muted); margin-right: 16px; }
