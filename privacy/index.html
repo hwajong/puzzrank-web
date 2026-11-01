@@ -23,7 +23,7 @@
     <!-- 한국어 -->
     <article lang="ko" class="active">
       <h1>개인정보처리방침</h1>
-      <p class="meta">시행일: 2026년 10월 14일</p>
+      <p class="meta">시행일: 2026년 11월 1일</p>
 
       <p>
         퍼즈랭크(PuzzRank, 이하 “서비스”)를 운영하는 전소연(이하 “운영자”)은 「개인정보 보호법」에 따라 이용자의 개인정보를 보호하고,
@@ -31,9 +31,9 @@
       </p>
       <div class="box">
         <p>
-          <strong>요약:</strong> 퍼즈랭크는 로그인 없이 쓰는 게임이라 이름·전화번호·이메일 같은 정보를 받지 않습니다.
-          랭킹 운영에 필요한 최소한의 정보(앱이 만든 무작위 기기 ID, 닉네임, 게임 기록 등)만 처리하며,
-          앱의 <strong>설정 &gt; 내 데이터 삭제</strong>로 언제든 모두 지울 수 있습니다.
+          <strong>요약:</strong> 퍼즈랭크는 로그인 없이 게스트로 쓰는 게임이라 이름·전화번호·이메일 같은 정보를 받지 않습니다.
+          게임과 랭킹에 필요한 정보(무작위 사용자 ID, 닉네임, 게임 기록 등)와 앱 이용 통계·오류 정보만 처리하며,
+          앱의 <strong>앱 설정 &gt; 계정 삭제</strong>로 언제든 지울 수 있습니다.
         </p>
       </div>
 
@@ -43,34 +43,48 @@
           <thead><tr><th>언제</th><th>항목</th><th>수집 방법</th></tr></thead>
           <tbody>
             <tr>
-              <td>앱을 처음 실행할 때 (익명 사용자 등록)</td>
-              <td>기기 ID(앱이 만든 무작위 값으로, 기기 고유번호·광고 식별자가 아님), 사용자 ID, 인증 토큰, 기기 언어 설정, 등록 시점의 IP 주소</td>
-              <td>앱이 자동으로 만들어 서버에 보냄</td>
+              <td>앱을 처음 실행할 때 (게스트 계정 만들기)</td>
+              <td>사용자 ID(서버가 만든 무작위 값), 인증 토큰, 자동 닉네임. 기기 언어는 자동 닉네임을 만드는 데만 쓰고 저장하지 않습니다.</td>
+              <td>앱이 자동으로 서버에 요청</td>
             </tr>
             <tr>
               <td>서비스를 이용할 때</td>
-              <td>닉네임(자동으로 만들어지며 직접 바꿀 수 있음), 게임 기록(점수, 게임 중 입력 기록, 플레이 시각, 순위), 앱 버전, 운영체제 종류(iOS·Android)</td>
-              <td>게임을 하거나 닉네임을 바꿀 때 앱이 서버에 보냄</td>
+              <td>닉네임, 아바타·바탕·레벨 프레임, 경험치·레벨, 게임 진행(스테이지·튜토리얼), 판 기록(게임 종류, 보드, 시작·끝 시각, 걸린 시간, 점수, 판 중 입력 기록, 결과), 일일 미션 진행, 날짜별 첫 접속 시각</td>
+              <td>게임을 하거나 설정을 바꿀 때 앱이 서버에 보냄</td>
             </tr>
             <tr>
-              <td>서버에 접속할 때</td>
-              <td>접속 IP 주소, 접속 시각, 요청한 기능(서버 접속 기록)</td>
+              <td>서버에 요청할 때</td>
+              <td>요청 시각, 요청한 기능(주소), 처리 결과와 걸린 시간(서버 접속 기록). IP 주소는 기록하지 않습니다.</td>
               <td>서버가 자동으로 기록</td>
+            </tr>
+            <tr>
+              <td>앱을 쓰는 동안 (이용 통계)</td>
+              <td>사용자 ID, 기기 식별값(광고 식별자가 아님), 앱 설치·업데이트·열기·백그라운드 전환과 이용 시작·끝 시각, 기기 모델, 운영체제와 버전, 기기 언어, 앱 버전, IP 주소와 이로부터 추정한 대략적인 위치(국가·지역·도시)</td>
+              <td>앱에 들어 있는 Amplitude 도구가 자동으로 보냄</td>
+            </tr>
+            <tr>
+              <td>앱에 오류가 나거나 앱이 멈췄을 때 (오류 정보)</td>
+              <td>사용자 ID, 오류 내용과 발생 위치, 오류 직전의 앱 동작 기록(서버 요청 주소 등), 기기 모델, 운영체제와 버전, 앱 버전, 발생 시각. IP 주소는 보내지 않습니다.</td>
+              <td>앱에 들어 있는 Sentry 도구가 자동으로 보냄</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p>
         인증 토큰은 원문을 저장하지 않고 되돌릴 수 없게 변환한 값(해시)만 서버에 저장합니다.
-        앱은 광고 식별자(IDFA·광고 ID), 위치, 연락처, 사진을 수집하지 않습니다.
+        앱은 광고 식별자(IDFA), 정확한 위치, 연락처, 사진을 수집하지 않습니다.
+      </p>
+      <p>
+        <strong>다른 이용자에게 보이는 정보:</strong> 랭킹과 프로필에는 닉네임, 아바타·바탕·레벨 프레임, 레벨, 오늘의 랭킹전 점수·순위·티어가 표시됩니다.
       </p>
 
       <h2>2. 처리 목적과 근거</h2>
       <ul>
-        <li><strong>게임과 랭킹 제공:</strong> 사용자 구분, 점수 기록과 검증, 주간·전체 랭킹 표시, 닉네임 표시
+        <li><strong>게임과 랭킹 제공:</strong> 사용자 구분, 진행과 기록 저장, 점수 검증, 오늘의 랭킹전 순위·티어 표시, 경험치·레벨·일일 미션 제공
           (「개인정보 보호법」 제15조 제1항 제4호, 이용자와의 계약 이행)</li>
-        <li><strong>부정 이용 방지:</strong> 기록 조작 확인, 기기·IP별 신규 등록 수 제한 (같은 조항 제6호, 운영자의 정당한 이익)</li>
-        <li><strong>문의 대응과 서비스 개선:</strong> 사용자 ID로 문의 내용 확인, 오류 원인 파악</li>
+        <li><strong>부정 이용 방지:</strong> 서버에서 판 기록을 다시 계산해 조작된 기록 확인 (같은 조항 제6호, 운영자의 정당한 이익)</li>
+        <li><strong>서비스 개선과 오류 수정:</strong> 이용 통계로 기능 이용 현황 파악, 오류 정보로 앱 오류 원인 파악과 수정 (같은 조항 제6호)</li>
+        <li><strong>문의 대응:</strong> 사용자 ID로 문의 내용 확인</li>
       </ul>
 
       <h2>3. 보유 기간</h2>
@@ -78,22 +92,22 @@
         <table>
           <thead><tr><th>항목</th><th>보유 기간</th></tr></thead>
           <tbody>
-            <tr><td>사용자 정보와 게임 기록</td><td>이용자가 데이터를 삭제할 때까지. 삭제하면 바로 파기</td></tr>
-            <tr><td>등록 시점의 IP 주소</td><td>등록 후 30일</td></tr>
-            <tr><td>결과를 내지 않은 게임(시작만 하고 끝내지 않은 판)</td><td>시작 후 30일</td></tr>
+            <tr><td>사용자 정보, 진행, 판 기록, 미션, 접속 기록(날짜별 첫 접속)</td><td>계정을 삭제할 때까지. 삭제하면 바로 파기</td></tr>
             <tr><td>서버 접속 기록</td><td>30일</td></tr>
+            <tr><td>이용 통계(Amplitude)</td><td>계정을 삭제하거나 삭제를 요청할 때까지. 삭제하면 30일 안에 Amplitude에서도 지움</td></tr>
+            <tr><td>오류 정보(Sentry)</td><td>수집 후 최대 90일</td></tr>
           </tbody>
         </table>
       </div>
       <p>
-        삭제한 데이터는 장애에 대비한 데이터베이스 자동 백업에 최대 7일간 남았다가 함께 지워집니다.
+        서버 데이터베이스는 따로 백업하지 않으므로, 삭제한 정보는 백업에 남지 않습니다.
         법령에 따라 보존해야 하는 경우에는 그 기간 동안 따로 보관합니다.
       </p>
 
       <h2>4. 파기 절차와 방법</h2>
       <p>
         보유 기간이 끝났거나 이용자가 삭제를 요청한 개인정보는 지체 없이 파기합니다.
-        전자 파일은 다시 살릴 수 없는 방법으로 데이터베이스에서 지우며, 기간이 지난 정보는 서버가 자동으로 정리합니다.
+        전자 파일은 다시 살릴 수 없는 방법으로 지우며, 보유 기간이 정해진 기록은 기간이 지나면 자동으로 지워집니다.
       </p>
 
       <h2>5. 제3자 제공</h2>
@@ -105,50 +119,83 @@
           <thead><tr><th>수탁자</th><th>위탁 업무</th><th>보관 위치</th></tr></thead>
           <tbody>
             <tr><td>Amazon Web Services, Inc.</td><td>서버 운영과 데이터 보관(클라우드)</td><td>대한민국 (AWS 서울 리전)</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>앱 이용 통계 수집·분석</td><td>미국</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>앱 오류 정보 수집·분석</td><td>미국</td></tr>
           </tbody>
         </table>
       </div>
-      <p>개인정보는 국내에 보관하며 국외로 이전하지 않습니다. 위탁 업무나 수탁자가 바뀌면 이 방침에 알립니다.</p>
+      <p>위탁 업무나 수탁자가 바뀌면 이 방침에 알립니다.</p>
 
-      <h2>7. 이용자의 권리와 행사 방법</h2>
+      <h2>7. 개인정보의 국외 이전</h2>
+      <p>
+        게임과 랭킹 정보는 국내(AWS 서울 리전)에 보관합니다. 이용 통계와 오류 정보는 아래와 같이 미국으로 이전해 처리합니다
+        (「개인정보 보호법」 제28조의8 제1항 제3호, 처리 위탁·보관).
+      </p>
+      <div class="table">
+        <table>
+          <thead><tr><th>이전받는 자 (연락처)</th><th>이전 국가</th><th>이전 항목</th><th>이전 일시와 방법</th><th>이용 목적과 보유 기간</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Amplitude, Inc.<br>(<a href="mailto:privacy@amplitude.com">privacy@amplitude.com</a>)</td>
+              <td>미국</td>
+              <td>1절의 이용 통계 항목</td>
+              <td>앱을 쓰는 동안 수시로, 암호화된 네트워크로 전송</td>
+              <td>앱 이용 통계 분석. 3절의 보유 기간</td>
+            </tr>
+            <tr>
+              <td>Functional Software, Inc. (Sentry)<br>(<a href="mailto:compliance@sentry.io">compliance@sentry.io</a>)</td>
+              <td>미국</td>
+              <td>1절의 오류 정보 항목</td>
+              <td>오류가 날 때마다, 암호화된 네트워크로 전송</td>
+              <td>앱 오류 원인 파악. 수집 후 최대 90일</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        이용 통계와 오류 정보 전송은 앱 안에서 따로 끌 수 없습니다. 원하지 않으면 앱 이용을 멈추고 <strong>계정 삭제</strong>를 하거나
+        아래 이메일로 삭제를 요청할 수 있습니다. 이 경우 서비스를 이용할 수 없습니다.
+      </p>
+
+      <h2>8. 이용자의 권리와 행사 방법</h2>
       <ul>
-        <li><strong>열람:</strong> 앱 화면(홈, 랭킹, 설정)에서 닉네임·기록·순위·사용자 ID를 볼 수 있습니다.</li>
-        <li><strong>정정:</strong> 앱의 설정 또는 홈에서 닉네임을 바꿀 수 있습니다.</li>
-        <li><strong>삭제·처리 정지:</strong> 앱의 <strong>설정 &gt; 내 데이터 삭제</strong>를 누르면 서버의 사용자 정보와 게임 기록이 모두 지워지고
-          랭킹에서도 바로 빠집니다. 지운 데이터는 되돌릴 수 없습니다.</li>
-        <li>앱을 쓸 수 없는 경우 등에는 아래 이메일로 요청할 수 있습니다. 본인 확인을 위해 앱의 설정에 표시된 <strong>사용자 ID</strong>를 함께 보내 주세요.
-          요청은 10일 안에 처리하고 결과를 알려 드립니다.</li>
+        <li><strong>열람:</strong> 앱 화면(홈, 랭킹, 나의 설정)에서 닉네임·레벨·기록·순위를 볼 수 있습니다.</li>
+        <li><strong>정정:</strong> 나의 설정에서 닉네임·아바타·바탕·레벨 프레임을 바꿀 수 있습니다.</li>
+        <li><strong>삭제·처리 정지:</strong> 앱의 <strong>앱 설정 &gt; 계정 삭제</strong>를 누르면 서버의 사용자 정보와 게임 기록이 모두 지워지고
+          랭킹에서도 바로 빠집니다. 지운 정보는 되돌릴 수 없습니다. 삭제한 뒤 앱을 계속 쓰면 새 게스트 계정으로 시작합니다.</li>
+        <li>앱을 쓸 수 없는 경우 등에는 아래 이메일로 요청할 수 있습니다. 앱의 <strong>앱 설정 &gt; 문의</strong>로 메일을 쓰면 본인 확인에 필요한
+          사용자 ID 일부와 앱 버전이 자동으로 들어갑니다. 요청은 10일 안에 처리하고 결과를 알려 드립니다.</li>
       </ul>
-      <p>앱을 지우기만 하면 서버의 데이터는 지워지지 않습니다. 데이터를 지우려면 앱을 지우기 전에 내 데이터 삭제를 해 주세요.</p>
+      <p>앱을 지우기만 하면 서버의 정보는 지워지지 않습니다. 정보를 지우려면 앱을 지우기 전에 계정 삭제를 해 주세요.</p>
 
-      <h2>8. 만 14세 미만 아동</h2>
+      <h2>9. 만 14세 미만 아동</h2>
       <p>
         서비스는 만 14세 미만 아동을 대상으로 하지 않으며, 만 14세 미만 아동의 개인정보를 알면서 수집하지 않습니다.
         만 14세 미만 아동의 개인정보가 수집된 것을 알게 되면 바로 삭제합니다. 법정대리인은 아래 이메일로 삭제를 요청할 수 있습니다.
       </p>
 
-      <h2>9. 안전성 확보 조치</h2>
+      <h2>10. 안전성 확보 조치</h2>
       <ul>
-        <li>앱과 서버 사이의 모든 통신을 암호화(HTTPS)합니다.</li>
-        <li>인증 토큰은 해시로만 저장하고, 기록에도 남기지 않습니다.</li>
-        <li>데이터베이스는 외부에서 직접 접속할 수 없게 막고, 서버 관리 접속을 운영자로 제한합니다.</li>
-        <li>필요한 정보만 처리하고, 보유 기간이 지난 정보는 자동으로 지웁니다.</li>
+        <li>앱과 서버, 앱과 Amplitude·Sentry 사이의 모든 통신을 암호화(HTTPS)합니다.</li>
+        <li>인증 토큰은 해시로만 저장하고, 기기에서는 운영체제의 보안 저장소(키체인)에 둡니다.</li>
+        <li>서버 저장 장치를 암호화하고, 데이터베이스는 외부에서 직접 접속할 수 없게 막으며, 서버 관리 접속을 운영자로 제한합니다.</li>
+        <li>필요한 정보만 처리하고, 보유 기간이 정해진 정보는 기간이 지나면 지웁니다.</li>
       </ul>
 
-      <h2>10. 자동 수집 장치</h2>
+      <h2>11. 자동 수집 장치</h2>
       <p>
-        앱은 쿠키를 쓰지 않으며, 광고나 맞춤형 광고를 위한 행태정보를 수집하지 않습니다.
+        앱은 쿠키를 쓰지 않고, 광고나 맞춤형 광고를 위한 행태정보를 수집하지 않으며, 다른 회사의 앱·웹사이트에 걸친 추적을 하지 않습니다.
+        앱 이용 통계와 오류 정보는 1절과 7절에 적은 대로 수집합니다.
         웹사이트(puzzrank.com)는 쿠키를 쓰지 않고, 고른 언어만 브라우저에 저장합니다.
         웹사이트는 글꼴을 Google Fonts에서 불러오며, 이때 브라우저가 Google 서버에 접속합니다.
       </p>
-      <p>앞으로 이용 통계나 오류 수집 도구를 도입하면, 도입 전에 이 방침을 고쳐 알립니다.</p>
 
-      <h2>11. 개인정보 보호책임자</h2>
+      <h2>12. 개인정보 보호책임자</h2>
       <div class="box">
         <p>개인정보 보호책임자: 전소연<br>이메일: <a href="mailto:puzzpang@gmail.com">puzzpang@gmail.com</a></p>
       </div>
 
-      <h2>12. 권익침해 구제 방법</h2>
+      <h2>13. 권익침해 구제 방법</h2>
       <p>개인정보 침해에 대한 상담이나 신고는 아래 기관에 할 수 있습니다.</p>
       <ul>
         <li>개인정보분쟁조정위원회: 1833-6972, <a href="https://www.kopico.go.kr">www.kopico.go.kr</a></li>
@@ -157,25 +204,25 @@
         <li>경찰청: 182, <a href="https://ecrm.police.go.kr">ecrm.police.go.kr</a></li>
       </ul>
 
-      <h2>13. 방침의 변경</h2>
+      <h2>14. 방침의 변경</h2>
       <p>이 방침을 바꾸면 시행 7일 전부터 이 페이지에 알립니다. 이용자에게 불리한 중요한 변경은 30일 전부터 알립니다.</p>
     </article>
 
     <!-- English -->
     <article lang="en">
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective date: October 14, 2026</p>
+      <p class="meta">Effective date: November 1, 2026</p>
 
       <p>
-        PuzzRank (the “Service”) is operated by JEON SOYEON (“we”, “us”). This policy explains what personal information we process,
+        PuzzRank (the “Service”) is operated by SOYOUN JEON (“we”, “us”). This policy explains what personal information we process,
         why, and how you can control it. It is written to comply with the Personal Information Protection Act of the Republic of Korea
         and other applicable privacy laws.
       </p>
       <div class="box">
         <p>
-          <strong>In short:</strong> PuzzRank has no sign-in, so we never ask for your name, phone number, or email.
-          We only process what the rankings need (a random device ID created by the app, your nickname, game records, and so on),
-          and you can delete all of it at any time with <strong>Settings &gt; Delete my data</strong> in the app.
+          <strong>In short:</strong> PuzzRank uses guest accounts with no sign-in, so we never ask for your name, phone number, or email.
+          We only process what the game and rankings need (a random user ID, your nickname, game records, and so on), plus app usage
+          analytics and crash reports, and you can delete it at any time with <strong>Settings &gt; Delete account</strong> in the app.
         </p>
       </div>
 
@@ -185,37 +232,56 @@
           <thead><tr><th>When</th><th>Information</th><th>How</th></tr></thead>
           <tbody>
             <tr>
-              <td>First launch (anonymous sign-up)</td>
-              <td>Device ID (a random value created by the app, not a hardware ID or advertising ID), user ID, access token,
-                device language, IP address at sign-up</td>
-              <td>Created by the app and sent to our server automatically</td>
+              <td>First launch (guest account)</td>
+              <td>User ID (a random value created by our server), access tokens, automatic nickname. Your device language is used only to
+                create the automatic nickname and is not stored.</td>
+              <td>Requested by the app automatically</td>
             </tr>
             <tr>
               <td>While you use the Service</td>
-              <td>Nickname (created automatically; you can change it), game records (scores, in-game inputs, play times, ranks),
-                app version, operating system (iOS or Android)</td>
-              <td>Sent by the app when you play or change your nickname</td>
+              <td>Nickname, avatar, background and level frame, XP and level, game progress (stages and tutorials), game records (game,
+                board, start and end times, time taken, score, in-game inputs, result), daily mission progress, first visit time of each day</td>
+              <td>Sent by the app when you play or change settings</td>
             </tr>
             <tr>
               <td>Every request to our server</td>
-              <td>IP address, time, and the feature requested (server access logs)</td>
+              <td>Time, the feature requested (address), result and processing time (server access logs). We do not log IP addresses.</td>
               <td>Recorded by the server automatically</td>
+            </tr>
+            <tr>
+              <td>While you use the app (usage analytics)</td>
+              <td>User ID, a device identifier (not an advertising identifier), app install, update, open and background events and session
+                start and end times, device model, operating system and version, device language, app version, IP address and the approximate
+                location derived from it (country, region, city)</td>
+              <td>Sent automatically by the Amplitude tool in the app</td>
+            </tr>
+            <tr>
+              <td>When the app has an error or crashes (crash reports)</td>
+              <td>User ID, the error and where it happened, recent app activity before the error (such as server request addresses), device
+                model, operating system and version, app version, time. IP addresses are not sent.</td>
+              <td>Sent automatically by the Sentry tool in the app</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p>
-        We never store your access token itself, only a one-way hash of it.
-        The app does not collect advertising identifiers (IDFA or Advertising ID), location, contacts, or photos.
+        We never store your access tokens themselves, only one-way hashes of them.
+        The app does not collect advertising identifiers (IDFA), precise location, contacts, or photos.
+      </p>
+      <p>
+        <strong>Visible to other players:</strong> your nickname, avatar, background and level frame, level, and your Daily Ranked score, rank
+        and tier are shown in rankings and profiles.
       </p>
 
       <h2>2. Why we process it (purposes and legal bases)</h2>
       <ul>
-        <li><strong>Providing the game and rankings:</strong> identifying players, recording and verifying scores, showing weekly and
-          all-time rankings and nicknames (performance of our contract with you).</li>
-        <li><strong>Preventing abuse:</strong> detecting manipulated scores and limiting new sign-ups per device and IP address
-          (our legitimate interest in fair rankings).</li>
-        <li><strong>Support and improvements:</strong> looking up your user ID when you contact us and investigating errors.</li>
+        <li><strong>Providing the game and rankings:</strong> identifying players, saving progress and records, verifying scores, showing
+          Daily Ranked ranks and tiers, and providing XP, levels and daily missions (performance of our contract with you).</li>
+        <li><strong>Preventing abuse:</strong> recalculating game records on our server to detect manipulated scores (our legitimate interest
+          in fair rankings).</li>
+        <li><strong>Improving the Service and fixing errors:</strong> understanding how features are used through analytics, and finding and
+          fixing app errors through crash reports (our legitimate interest).</li>
+        <li><strong>Support:</strong> looking up your user ID when you contact us.</li>
       </ul>
 
       <h2>3. How long we keep it</h2>
@@ -223,83 +289,113 @@
         <table>
           <thead><tr><th>Information</th><th>Retention</th></tr></thead>
           <tbody>
-            <tr><td>Your account information and game records</td><td>Until you delete your data. Deleted immediately when you do</td></tr>
-            <tr><td>IP address at sign-up</td><td>30 days after sign-up</td></tr>
-            <tr><td>Games that were started but never finished</td><td>30 days after they start</td></tr>
+            <tr><td>Account information, progress, game records, missions, daily first visits</td><td>Until you delete your account. Deleted immediately when you do</td></tr>
             <tr><td>Server access logs</td><td>30 days</td></tr>
+            <tr><td>Usage analytics (Amplitude)</td><td>Until you delete your account or ask us to delete it. Then deleted from Amplitude within 30 days</td></tr>
+            <tr><td>Crash reports (Sentry)</td><td>Up to 90 days after collection</td></tr>
           </tbody>
         </table>
       </div>
       <p>
-        Deleted data may remain in automatic database backups for up to 7 days before those backups are removed.
+        We do not keep separate backups of our server database, so deleted information does not remain in backups.
         If a law requires us to keep certain information longer, we keep it separately for that period only.
       </p>
 
       <h2>4. How we delete it</h2>
       <p>
-        When the retention period ends or you ask us to delete your data, we delete it without delay by removing it from our database
-        so it cannot be recovered. Expired information is cleaned up automatically by the server.
+        When the retention period ends or you ask us to delete your data, we delete it without delay so it cannot be recovered.
+        Information with a fixed retention period is deleted automatically when the period ends.
       </p>
 
       <h2>5. Sharing with third parties</h2>
       <p>We do not sell or share your personal information with third parties, except where required by law.</p>
 
-      <h2>6. Service providers and storage location</h2>
+      <h2>6. Service providers</h2>
       <div class="table">
         <table>
           <thead><tr><th>Provider</th><th>Service</th><th>Location</th></tr></thead>
           <tbody>
             <tr><td>Amazon Web Services, Inc.</td><td>Server hosting and data storage (cloud)</td><td>Republic of Korea (AWS Seoul Region)</td></tr>
+            <tr><td>Amplitude, Inc.</td><td>App usage analytics</td><td>United States</td></tr>
+            <tr><td>Functional Software, Inc. (Sentry)</td><td>App crash reporting</td><td>United States</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>We will update this policy if our providers change.</p>
+
+      <h2>7. International transfers</h2>
+      <p>
+        Game and ranking information is stored in the Republic of Korea (AWS Seoul Region). Usage analytics and crash reports are transferred
+        to and processed in the United States as follows.
+      </p>
+      <div class="table">
+        <table>
+          <thead><tr><th>Recipient (contact)</th><th>Country</th><th>Information</th><th>When and how</th><th>Purpose and retention</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Amplitude, Inc.<br>(<a href="mailto:privacy@amplitude.com">privacy@amplitude.com</a>)</td>
+              <td>United States</td>
+              <td>Usage analytics listed in section 1</td>
+              <td>While you use the app, over an encrypted connection</td>
+              <td>Usage analytics. Retention as in section 3</td>
+            </tr>
+            <tr>
+              <td>Functional Software, Inc. (Sentry)<br>(<a href="mailto:compliance@sentry.io">compliance@sentry.io</a>)</td>
+              <td>United States</td>
+              <td>Crash reports listed in section 1</td>
+              <td>Whenever an error occurs, over an encrypted connection</td>
+              <td>Finding the cause of app errors. Up to 90 days</td>
+            </tr>
           </tbody>
         </table>
       </div>
       <p>
-        Your information is stored in the Republic of Korea. If you use the Service from another country, your information is
-        transferred to and processed in Korea. Korea has been recognized by the European Commission as providing an adequate level of
-        data protection. We will update this policy if our providers change.
+        Analytics and crash reporting cannot be turned off separately in the app. If you do not want them, you can stop using the app and
+        use <strong>Delete account</strong>, or email us to ask for deletion. You will then no longer be able to use the Service.
       </p>
 
-      <h2>7. Your rights</h2>
+      <h2>8. Your rights</h2>
       <ul>
-        <li><strong>Access:</strong> you can see your nickname, records, ranks, and user ID in the app (Home, Ranking, and Settings).</li>
-        <li><strong>Correction:</strong> you can change your nickname in Settings or on the Home screen.</li>
-        <li><strong>Deletion and objection:</strong> tap <strong>Settings &gt; Delete my data</strong> in the app to delete your account
-          information and game records from our server. You are removed from the rankings immediately. This cannot be undone.</li>
-        <li>You can also email us at the address below. To verify that the request is yours, include the <strong>User ID</strong> shown in
-          the app's Settings. We respond within 10 days.</li>
+        <li><strong>Access:</strong> you can see your nickname, level, records, and ranks in the app (Home, Ranking, and My Profile).</li>
+        <li><strong>Correction:</strong> you can change your nickname, avatar, background, and level frame in My Profile.</li>
+        <li><strong>Deletion and objection:</strong> tap <strong>Settings &gt; Delete account</strong> in the app to delete your account
+          information and game records from our server. You are removed from the rankings immediately. This cannot be undone.
+          If you keep using the app afterwards, you start again with a new guest account.</li>
+        <li>You can also email us at the address below. If you write from <strong>Settings &gt; Contact us</strong> in the app, part of your
+          user ID and the app version are added automatically so we can confirm the request is yours. We respond within 10 days.</li>
         <li>If you are in the EEA, the UK, or another region with similar laws, you may also have rights to data portability and to lodge
           a complaint with your local data protection authority.</li>
       </ul>
-      <p>Uninstalling the app does not delete your data from our server. Please use Delete my data before uninstalling.</p>
+      <p>Uninstalling the app does not delete your data from our server. Please use Delete account before uninstalling.</p>
 
-      <h2>8. Children</h2>
+      <h2>9. Children</h2>
       <p>
         The Service is not directed to children under 14 (or the minimum age required in your country), and we do not knowingly collect
         their personal information. If we learn that we have, we delete it promptly. A parent or guardian can ask us to delete it by email.
       </p>
 
-      <h2>9. Security</h2>
+      <h2>10. Security</h2>
       <ul>
-        <li>All communication between the app and our server is encrypted (HTTPS).</li>
-        <li>Access tokens are stored only as hashes and are never written to logs.</li>
-        <li>The database cannot be reached directly from the internet, and administrative access is limited to the operator.</li>
-        <li>We process only what we need and delete expired information automatically.</li>
+        <li>All communication between the app and our server, Amplitude, and Sentry is encrypted (HTTPS).</li>
+        <li>Access tokens are stored only as hashes on our server, and in the operating system's secure storage (Keychain) on your device.</li>
+        <li>Server storage is encrypted, the database cannot be reached directly from the internet, and administrative access is limited to the operator.</li>
+        <li>We process only what we need and delete information with a fixed retention period when that period ends.</li>
       </ul>
 
-      <h2>10. Cookies and tracking</h2>
+      <h2>11. Cookies and tracking</h2>
       <p>
-        The app does not use cookies and does not collect information for advertising or ad targeting.
+        The app does not use cookies, does not collect information for advertising or ad targeting, and does not track you across other
+        companies' apps or websites. Usage analytics and crash reports are collected as described in sections 1 and 7.
         Our website (puzzrank.com) does not use cookies; it only stores your language choice in your browser.
         The website loads fonts from Google Fonts, which means your browser connects to Google's servers.
       </p>
-      <p>If we add analytics or crash reporting tools in the future, we will update this policy before doing so.</p>
 
-      <h2>11. Contact</h2>
+      <h2>12. Contact</h2>
       <div class="box">
-        <p>Privacy officer: JEON SOYEON<br>Email: <a href="mailto:puzzpang@gmail.com">puzzpang@gmail.com</a></p>
+        <p>Privacy officer: SOYOUN JEON<br>Email: <a href="mailto:puzzpang@gmail.com">puzzpang@gmail.com</a></p>
       </div>
 
-      <h2>12. Changes to this policy</h2>
+      <h2>13. Changes to this policy</h2>
       <p>
         We will post any changes on this page at least 7 days before they take effect, or at least 30 days before for significant
         changes that affect your rights. If the Korean and English versions differ, the Korean version prevails.
@@ -310,6 +406,7 @@
   <footer>
     <a href="../" data-ko="퍼즈랭크 홈" data-en="PuzzRank home">퍼즈랭크 홈</a>
     <a href="../terms/" data-ko="이용약관" data-en="Terms of Service">이용약관</a>
+    <a href="../support/" data-ko="고객 지원" data-en="Support">고객 지원</a>
   </footer>
 
   <script src="../assets/legal.js"></script>
