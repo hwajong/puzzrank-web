@@ -1,13 +1,20 @@
-/* 이용약관·개인정보처리방침 공통. 색은 첫 페이지(index.html)와 같다. */
+/* 이용약관·개인정보처리방침·고객 지원 공통. 색·모서리·두께는 첫 페이지(index.html)·앱 디자인 시스템과 같다. */
 :root {
-  --bg: #140c34;
-  --surface: #211651;
-  --line: #46379a;
-  --ink: #f5f1ff;
-  --ink-muted: #bfb4ee;
-  --ink-faint: #9184cc;
-  --sky: #3dd6ff;
-  --title: "Jua", "Baloo 2", system-ui, sans-serif;
+  --surface: #fdf6ea;
+  --surface-sunken: #f3eadb;
+  --surface-depth: #e2d6c3;
+  --surface-edge: #ebe0cf;
+  --veil: #f2ede6;
+  --ink: #3b2c23;
+  --ink-muted: #6f5b4c;
+  --link: #2f6fae;
+  --r-sm: 10px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --card-shadow: 0 2px 0 var(--surface-edge), 0 8px 18px rgba(59, 44, 35, 0.12);
+  --title-ko: "Jua", "Baloo 2", system-ui, sans-serif;
+  --title-en: "Baloo 2", "Jua", system-ui, sans-serif;
+  --body: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -16,9 +23,9 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg);
+  background: var(--veil);
   color: var(--ink);
-  font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: var(--body);
   line-height: 1.7;
   overflow-x: hidden;
 }
@@ -28,51 +35,80 @@ header {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  max-width: 760px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 16px;
 }
-header img { display: block; width: 150px; height: auto; }
+
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { display: block; width: 36px; height: 36px; border-radius: 9px; box-shadow: 0 2px 6px rgba(47, 56, 72, 0.2); }
+.brand span { font-family: "Baloo 2", system-ui, sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); }
 
 .lang {
-  padding: 6px 12px;
-  border: 1px solid var(--line);
+  min-height: 40px;
+  padding: 6px 16px;
+  border: 0;
   border-radius: 999px;
-  background: transparent;
-  color: var(--ink-muted);
-  font: inherit;
-  font-size: 13px;
+  background: var(--surface);
+  box-shadow: 0 3px 0 var(--surface-depth);
+  color: var(--ink);
+  font: 500 14px var(--body);
   cursor: pointer;
 }
+.lang:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--surface-depth); }
 
-main { max-width: 760px; margin: 0 auto; padding: 8px 16px 56px; }
+main { max-width: 800px; margin: 0 auto; padding: 4px 16px 0; }
 
 /* 언어별 본문: 지금 언어가 아닌 쪽은 숨긴다 (legal.js) */
 article[lang]:not(.active) { display: none; }
 
-h1 { margin: 16px 0 4px; font-family: var(--title); font-weight: 400; font-size: clamp(28px, 6vw, 38px); line-height: 1.25; }
-h2 { margin: 36px 0 8px; font-size: 19px; }
-h3 { margin: 20px 0 4px; font-size: 16px; }
+/* 본문은 아이보리 카드 한 장 */
+article {
+  padding: 24px 20px 28px;
+  border-radius: var(--r-lg);
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+}
+
+h1, h2, h3 { font-family: var(--title-ko); font-weight: 400; letter-spacing: -0.01em; color: var(--ink); }
+html[lang="en"] h1, html[lang="en"] h2, html[lang="en"] h3 { font-family: var(--title-en); font-weight: 800; letter-spacing: 0; }
+h1 { margin: 0 0 4px; font-size: clamp(28px, 6vw, 36px); line-height: 1.25; }
+h2 { margin: 32px 0 8px; font-size: 21px; line-height: 1.35; }
+h3 { margin: 20px 0 4px; font-size: 17px; line-height: 1.4; }
 p, li { color: var(--ink-muted); }
+ul { padding-left: 1.2em; }
+li + li { margin-top: 4px; }
 strong { color: var(--ink); }
-a { color: var(--sky); }
-.meta { margin: 0 0 24px; color: var(--ink-faint); font-size: 14px; }
-.box { margin: 16px 0; padding: 14px 16px; border-radius: 14px; background: var(--surface); }
+a { color: var(--link); }
+.meta { margin: 0 0 20px; color: var(--ink-muted); font-size: 14px; }
+
+/* 요약·연락처 상자: 한 단계 들어간 면 */
+.box { margin: 16px 0; padding: 14px 16px; border-radius: var(--r-md); background: var(--surface-sunken); }
 .box p { margin: 0; }
 
 /* 표는 좁은 화면에서 표 안에서만 가로로 밀린다 */
-.table { overflow-x: auto; margin: 12px 0; border: 1px solid var(--line); border-radius: 12px; }
-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14px; }
-th, td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; color: var(--ink-muted); }
-th { background: var(--surface); color: var(--ink); font-weight: 700; }
+.table { overflow-x: auto; margin: 12px 0; border: 1px solid var(--surface-depth); border-radius: var(--r-sm); }
+table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 14px; background: var(--surface); }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--surface-edge); text-align: left; vertical-align: top; color: var(--ink-muted); }
+th { background: var(--surface-sunken); color: var(--ink); font-weight: 700; white-space: nowrap; }
 tr:last-child td { border-bottom: 0; }
 
 footer {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 20px 16px 40px;
-  border-top: 1px solid var(--line);
-  color: var(--ink-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 24px 16px 40px;
+  border-top: 1px solid var(--surface-depth);
+  color: var(--ink-muted);
   font-size: 14px;
 }
-footer a { color: var(--ink-muted); margin-right: 16px; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+footer a { color: var(--ink-muted); }
+
+@media (min-width: 760px) {
+  article { padding: 36px 40px 40px; }
+}
